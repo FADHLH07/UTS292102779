@@ -1,0 +1,32 @@
+{
+  "name": "uts292102779",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "ng serve --open",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development"
+  },
+  "dependencies": {
+    "@angular/animations": "^20.3.0",
+    "@angular/common": "^20.3.0",
+    "@angular/compiler": "^20.3.0",
+    "@angular/core": "^20.3.0",
+    "@angular/forms": "^20.3.0",
+    "@angular/platform-browser": "^20.3.0",
+    "@angular/router": "^20.3.0",
+    "admin-lte": "^4.10.2",
+    "bootstrap": "^5.3.9",
+    "bootstrap-icons": "^1.13.2",
+    "overlayscrollbars": "^2.17.0",
+    "rxjs": "~7.8.2",
+    "tslib": "^2.8.1",
+    "zone.js": "~0.15.1"
+  },
+  "devDependencies": {
+    "@angular/build": "^20.3.0",
+    "@angular/cli": "^20.3.0",
+    "@angular/compiler-cli": "^20.3.0",
+    "typescript": "~5.9.2"
+  }
+}

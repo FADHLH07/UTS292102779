@@ -1,0 +1,38 @@
+<div class="chat-layout">
+  <aside class="chat-contacts">
+    <div class="p-3 border-bottom">
+      <div class="input-group input-group-sm">
+        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+        <input class="form-control" type="search" placeholder="Search contacts..." [(ngModel)]="searchText">
+      </div>
+    </div>
+    @for (contact of filteredContacts; track contact.name) {
+      <div class="contact-item" [class.selected]="selected === contact.name" (click)="selectContact(contact.name)">
+        <div class="avatar" [class.green]="contact.color === 'green'" [class.orange]="contact.color === 'orange'" [class.purple]="contact.color === 'purple'">{{ contact.initials }}</div>
+        <div class="flex-grow-1 min-w-0">
+          <div class="d-flex justify-content-between gap-2"><strong class="text-truncate">{{ contact.name }}</strong><small class="text-muted">10:42</small></div>
+          <small class="text-muted d-block text-truncate">{{ contact.preview }}</small>
+          <small class="text-success">{{ contact.status }}</small>
+        </div>
+      </div>
+    }
+  </aside>
+  <section class="chat-window">
+    <div class="chat-top">
+      <div class="avatar">{{ selectedInitials }}</div>
+      <div class="flex-grow-1"><strong>{{ selected }}</strong><div class="small text-success">● Online</div></div>
+      <button class="btn btn-light btn-sm" aria-label="Voice call"><i class="bi bi-telephone"></i></button>
+      <button class="btn btn-light btn-sm" aria-label="More options"><i class="bi bi-three-dots-vertical"></i></button>
+    </div>
+    <div class="chat-messages">
+      @for (message of messages; track $index) {
+        <div class="message" [class.mine]="message.mine">{{ message.text }}<small>{{ message.time }}</small></div>
+      }
+    </div>
+    <form class="chat-compose" (ngSubmit)="sendMessage()">
+      <button type="button" class="btn btn-light" aria-label="Attach file"><i class="bi bi-paperclip"></i></button>
+      <input class="form-control" name="draft" [(ngModel)]="draft" placeholder="Type a message..." autocomplete="off">
+      <button class="btn btn-primary" type="submit" aria-label="Send message"><i class="bi bi-send"></i></button>
+    </form>
+  </section>
+</div>
