@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # UTS292102779 — Angular + AdminLTE 4
 
 **Nama:** Faadhillah Destia Fitri  
@@ -48,3 +49,6 @@ npm run build
 
 ## Perbaikan kompatibilitas template
 Template menggunakan getter `selectedInitials` di TypeScript (bukan arrow function di HTML Angular), dan binding sidebar menggunakan sintaks `[class.d-none]`.
+=======
+# UTS292102779
+>>>>>>> 9efaff8b30f9fd60445cfd4262eeb9f2ade62441
